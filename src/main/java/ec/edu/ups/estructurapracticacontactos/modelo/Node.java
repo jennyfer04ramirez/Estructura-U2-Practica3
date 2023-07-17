@@ -10,13 +10,13 @@ package ec.edu.ups.estructurapracticacontactos.modelo;
  */
 public class Node {
     private Contacto contacto;
-    private String left;
-    private String right;
+    private Node left;
+    private Node right;
 
     public Node(Contacto contacto) {
         this.contacto = contacto;
-        this.left = null;
-        this.right = null;
+        left = null;
+        right = null;
     }
 
     public Contacto getContacto() {
@@ -27,21 +27,19 @@ public class Node {
         this.contacto = contacto;
     }
 
-    public String getLeft() {
+    public Node getLeft() {
         return left;
     }
 
-    public void setLeft(String left) {
+    public void setLeft(Node left) {
         this.left = left;
     }
 
-    public String getRight() {
+    public Node getRight() {
         return right;
     }
 
-    public void setRight(String right) {
+    public void setRight(Node right) {
         this.right = right;
     }
-    
-    
 }
