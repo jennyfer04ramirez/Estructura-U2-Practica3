@@ -4,6 +4,11 @@
  */
 package ec.edu.ups.estructurapracticacontactos.modelo;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
 /**
  *
  * @author casa
@@ -11,10 +16,14 @@ package ec.edu.ups.estructurapracticacontactos.modelo;
 public class Contacto {
     private String nombre;
     private String telefono;
+    private List<String> correos;
+    private Map<String, String> redesSociales;
 
     public Contacto(String nombre, String telefono) {
         this.nombre = nombre;
         this.telefono = telefono;
+        this.correos = new LinkedList<>();
+        this.redesSociales = new HashMap<>();
     }
 
     public String getNombre() {
@@ -33,8 +42,32 @@ public class Contacto {
         this.telefono = telefono;
     }
 
+    public List<String> getCorreos() {
+        return correos;
+    }
+
+    public void setCorreos(List<String> correos) {
+        this.correos = correos;
+    }
+
+    public Map<String, String> getRedesSociales() {
+        return redesSociales;
+    }
+
+    public void setRedesSociales(Map<String, String> redesSociales) {
+        this.redesSociales = redesSociales;
+    }
+    
+    public void agregarCorreos(String correo) {
+        correos.add(correo);
+    }
+    
+    public void agregarRedesSociales(String redSocial, String URL) {
+        redesSociales.put(redSocial, URL);
+    }
+
     @Override
     public String toString() {
-        return "Contacto{" + "nombre=" + nombre + ", telefono=" + telefono + '}';
-    }   
+        return "Contacto{" + "nombre=" + nombre + ", telefono=" + telefono + ", correos=" + correos + ", redesSociales=" + redesSociales + '}';
+    } 
 }
